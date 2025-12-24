@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ 
@@ -8,16 +8,15 @@ const inter = Inter({
   display: 'swap',
 })
 
-const playfair = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-serif',
-  display: 'swap',
-})
-
 export const metadata: Metadata = {
-  title: 'EagleX Logistics | White Glove Moving & Red Carpet Setup | Ontario & Quebec',
-  description: 'Premium logistics, careful handling, and full in-home setup — from delivery to final placement. White glove moving and red carpet setup across Ontario & Quebec.',
-  keywords: 'moving, logistics, white glove service, furniture delivery, Ontario, Quebec, premium moving',
+  title: 'EagleX Logistics | Trucking & Freight Logistics | Ontario & Quebec',
+  description: 'Reliable trucking and logistics execution across Ontario & Quebec. Commercial freight transportation, white glove execution, and end-to-end logistics coordination.',
+  keywords: 'trucking, freight logistics, commercial logistics, Ontario, Quebec, white glove logistics, freight transportation',
+  openGraph: {
+    title: 'EagleX Logistics | Trucking & Freight Logistics',
+    description: 'Reliable trucking and logistics execution across Ontario & Quebec.',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
@@ -27,10 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
   )
 }
-

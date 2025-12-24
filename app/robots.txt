@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eaglexlogistics.ca/sitemap.xml
+
