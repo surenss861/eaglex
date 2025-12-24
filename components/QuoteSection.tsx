@@ -40,6 +40,9 @@ export default function QuoteSection() {
           <h2 className="text-display-sm text-white mb-8">
             Request <span className="text-white/50">Quote</span>
           </h2>
+          <p className="text-sm text-white/40 uppercase tracking-widest">
+            Response within one business day. Commercial inquiries prioritized.
+          </p>
         </motion.div>
 
         <div className="max-w-2xl">
