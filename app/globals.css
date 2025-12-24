@@ -51,11 +51,17 @@
   }
 
   .text-display {
-    @apply text-display font-bold tracking-tight;
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 
   .text-display-sm {
-    @apply text-display-sm font-bold tracking-tight;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-weight: 700;
   }
 
   .section-divider {
