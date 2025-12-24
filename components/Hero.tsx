@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight, Phone, Calendar } from 'lucide-react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import { CONTACT } from '@/lib/constants'
@@ -61,113 +61,88 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-offwhite to-primary/5"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Subtle angled overlay - soft gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-teal/5 pointer-events-none" />
-
-      {/* Optional: Very subtle light sweep */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        initial={{ x: '-100%' }}
-        animate={{ x: '100%' }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatDelay: 3,
-          ease: 'linear',
+      {/* Full-width Hero Background with Real Truck Imagery */}
+      <div
+        ref={imageRef}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=80')",
         }}
-      />
+      >
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/85 via-navy-900/75 to-navy-900/60" />
+      </div>
 
+      {/* Content */}
       <div className="container-custom relative z-10 pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Headline & CTA */}
-          <div>
-            <div ref={headlineRef} className="mb-8">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
-                <span className="line block text-gray-900">White Glove Logistics</span>
-                <span className="line block text-gray-900">
-                  & <span className="text-gradient">Red Carpet Setup</span>
-                </span>
-                <span className="line block text-2xl md:text-3xl lg:text-4xl mt-4 text-gray-500 font-normal">
-                  Serving Ontario & Quebec
-                </span>
-              </h1>
+        <div className="max-w-4xl">
+          <div ref={headlineRef} className="mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight text-white">
+              <span className="line block">Professional White Glove Logistics</span>
+              <span className="line block">
+                Across <span className="text-gradient bg-gradient-to-r from-primary-light to-teal-light bg-clip-text text-transparent">Ontario & Quebec</span>
+              </span>
+            </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-gray-700 mb-8 leading-relaxed"
-              >
-                From delivery to full in-home setup — handled with care, 
-                precision, and professionalism.
-              </motion.p>
-            </div>
-
-            {/* CTA Row */}
-            <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-6">
-              <Link
-                href="/quote"
-                className="btn-primary inline-flex items-center justify-center group"
-              >
-                Get a Quote
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={20} />
-              </Link>
-              {CONTACT.phone.visible && (
-                <a
-                  href={CONTACT.phone.href}
-                  className="btn-secondary inline-flex items-center justify-center group"
-                >
-                  <Phone className="mr-2" size={20} />
-                  Call Now
-                </a>
-              )}
-            </div>
-
-            {/* Trust Row */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-wrap gap-4 text-sm text-gray-600"
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed"
             >
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full" />
-                Fully Insured & Bonded
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full" />
-                Background-Checked Crews
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-primary rounded-full" />
-                Damage-Free Guarantee
-              </span>
-            </motion.div>
+              Fast delivery, careful handling, full in-home setup — 
+              trusted logistics from delivery to final placement.
+            </motion.p>
           </div>
 
-          {/* Right: Hero Image with Parallax */}
+          {/* Strong CTA Row */}
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-8">
+            <Link
+              href="/quote"
+              className="btn-primary inline-flex items-center justify-center group text-lg px-10 py-5"
+            >
+              Request Free Quote
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" size={22} />
+            </Link>
+            <Link
+              href="/quote"
+              className="btn-secondary inline-flex items-center justify-center group text-lg px-10 py-5 border-2 border-white text-white hover:bg-white hover:text-navy-900"
+            >
+              <Calendar className="mr-2" size={22} />
+              Schedule Setup
+            </Link>
+            {CONTACT.phone.visible && (
+              <a
+                href={CONTACT.phone.href}
+                className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-10 py-5 rounded-lg font-semibold uppercase tracking-wide transition-all duration-300 hover:bg-white/20 inline-flex items-center justify-center group text-lg"
+              >
+                <Phone className="mr-2" size={22} />
+                Call Now
+              </a>
+            )}
+          </div>
+
+          {/* Trust Row */}
           <motion.div
-            ref={imageRef}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="relative h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-800 to-navy-900"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-wrap gap-6 text-base text-gray-200"
           >
-            {/* Premium image placeholder - replace with real white glove service photo */}
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')] bg-cover bg-center opacity-60" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/40 to-transparent" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white p-8 max-w-md">
-                <div className="text-5xl mb-4">📦✨</div>
-                <p className="text-lg font-semibold mb-2">White Glove Service</p>
-                <p className="text-sm text-gray-300">
-                  Replace with professional photo: crew in uniform, furniture blankets, 
-                  in-home setup, clean truck/warehouse
-                </p>
-              </div>
-            </div>
+            <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span className="w-2 h-2 bg-primary-light rounded-full" />
+              Fully Insured & Bonded
+            </span>
+            <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span className="w-2 h-2 bg-primary-light rounded-full" />
+              Background-Checked Crews
+            </span>
+            <span className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <span className="w-2 h-2 bg-primary-light rounded-full" />
+              Damage-Free Guarantee
+            </span>
           </motion.div>
         </div>
       </div>
