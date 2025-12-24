@@ -14,23 +14,24 @@ export default function WhiteGloveExecution() {
 
     const steps = stepsRef.current.querySelectorAll('.execution-step')
 
+    // Delayed entrance, heavier easing - slower cadence
     steps.forEach((step, index) => {
       gsap.from(step, {
         opacity: 0,
-        x: -60,
-        duration: 1,
-        ease: 'power3.out',
-        delay: index * 0.2,
+        x: -80,
+        duration: 1.4,
+        ease: 'power4.out',
+        delay: index * 0.3 + 0.5, // Slower stagger
       })
 
-      // Line draw animation
+      // Line draw animation - slower
       const line = step.querySelector('.step-line')
       if (line) {
         gsap.from(line, {
           scaleX: 0,
-          duration: 0.8,
+          duration: 1.2,
           ease: 'power2.out',
-          delay: index * 0.2 + 0.3,
+          delay: index * 0.3 + 0.8,
         })
       }
     })
@@ -40,22 +41,18 @@ export default function WhiteGloveExecution() {
     {
       number: '01',
       title: 'Controlled Handling',
-      description: 'Specialized protocols for sensitive freight. Damage-prevention systems active.',
     },
     {
       number: '02',
       title: 'On-Site Assembly',
-      description: 'Professional uniformed crews. Tools and equipment prepared. Assembly executed per specifications.',
     },
     {
       number: '03',
       title: 'Precision Placement',
-      description: 'Room-of-choice delivery. Exact positioning. Floor and wall protection protocols.',
     },
     {
       number: '04',
       title: 'Professional Cleanup',
-      description: 'Packaging removal. Site restoration. Final inspection and confirmation.',
     },
   ]
 
@@ -63,93 +60,69 @@ export default function WhiteGloveExecution() {
     <section
       ref={sectionRef}
       className="section-padding bg-charcoal-50 section-divider relative overflow-hidden"
+      style={{ backgroundColor: '#050505' }} // Darker than surrounding
     >
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 bg-gradient-to-br from-charcoal-50 via-charcoal to-charcoal-50 opacity-50" />
+      {/* Subtle background texture - darker */}
+      <div className="absolute inset-0 bg-gradient-to-br from-charcoal-50/30 via-charcoal to-charcoal-50/30" />
 
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 1.2, ease: [0.23, 1, 0.32, 1] }}
           className="mb-24"
         >
-          <span className="text-white/40 uppercase tracking-widest text-xs font-bold mb-8 block">
-            Execution Module
+          <span className="text-white/30 uppercase tracking-widest text-xs font-bold mb-8 block">
+            Available Capability
           </span>
           <h2 className="text-display-sm mb-8 text-white">
-            White Glove / Red Carpet{' '}
-            <span className="text-white/50">Execution</span>
+            White Glove / Red Carpet
           </h2>
-          <p className="text-2xl text-white/70 font-light max-w-3xl">
-            Specialized logistics execution for shipments requiring controlled handling, 
-            assembly, or precise placement. Commercial and retail execution protocols.
+          <p className="text-xl text-white/50 font-light max-w-2xl">
+            Specialized execution for shipments requiring controlled handling, 
+            assembly, or precise placement.
           </p>
         </motion.div>
 
-        <div ref={stepsRef} className="space-y-16">
+        <div ref={stepsRef} className="space-y-20">
           {executionSteps.map((step, index) => (
             <div
               key={index}
-              className="execution-step section-divider pt-16"
+              className="execution-step section-divider pt-20"
             >
-              <div className="flex flex-col md:flex-row md:items-start gap-8">
+              <div className="flex flex-col md:flex-row md:items-start gap-12">
                 <div className="flex-shrink-0">
-                  <div className="text-6xl font-bold text-white/20 mb-4">
+                  <div className="text-7xl font-bold text-white/10 mb-6">
                     {step.number}
                   </div>
-                  <div className="w-24 h-px bg-white/20 step-line" />
+                  <div className="w-32 h-px bg-white/10 step-line" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
+                  <h3 className="text-5xl md:text-6xl font-bold text-white tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="text-xl text-white/60 font-light leading-relaxed max-w-2xl">
-                    {step.description}
-                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Systems callout */}
+        {/* Minimal systems callout - implied capability */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 1, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
-          className="mt-24 pt-16 section-divider"
+          transition={{ duration: 1.2, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
+          className="mt-32 pt-16 section-divider"
         >
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="text-sm text-white/40 uppercase tracking-widest mb-4">
-                Systems
-              </h4>
-              <p className="text-white/70 font-light">
-                Damage-prevention protocols. Quality control checkpoints. 
-                Professional uniformed crews.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-sm text-white/40 uppercase tracking-widest mb-4">
-                Execution
-              </h4>
-              <p className="text-white/70 font-light">
-                Scheduled. Dispatched. Executed. Confirmed. 
-                End-to-end visibility and accountability.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-sm text-white/40 uppercase tracking-widest mb-4">
-                Coverage
-              </h4>
-              <p className="text-white/70 font-light">
-                Available across Ontario & Quebec. 
-                Commercial and retail execution capabilities.
-              </p>
-            </div>
+          <div className="max-w-2xl">
+            <p className="text-sm text-white/30 uppercase tracking-widest mb-4">
+              Execution Protocol
+            </p>
+            <p className="text-lg text-white/40 font-light leading-relaxed">
+              Scheduled. Dispatched. Executed. Confirmed.
+            </p>
           </div>
         </motion.div>
       </div>

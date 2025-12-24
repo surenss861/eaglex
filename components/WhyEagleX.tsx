@@ -1,8 +1,27 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import gsap from 'gsap'
 
 export default function WhyEagleX() {
+  const numbersRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(numbersRef, { once: true, margin: '-100px' })
+
+  useEffect(() => {
+    // Staggered number reveals
+    if (numbersRef.current && isInView) {
+      const numbers = numbersRef.current.querySelectorAll('.reason-number')
+      gsap.from(numbers, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out',
+      })
+    }
+  }, [isInView])
+
   const reasons = [
     {
       number: '01',
@@ -36,7 +55,7 @@ export default function WhyEagleX() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-16">
+        <div ref={numbersRef} className="grid md:grid-cols-3 gap-16">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -46,7 +65,7 @@ export default function WhyEagleX() {
               transition={{ duration: 1, delay: index * 0.15, ease: [0.23, 1, 0.32, 1] }}
               className="section-divider pt-8"
             >
-              <div className="text-4xl font-bold text-white/20 mb-4">
+              <div className="reason-number text-4xl font-bold text-white/20 mb-4">
                 {reason.number}
               </div>
               <h3 className="text-3xl font-bold mb-4 text-white tracking-tight">
