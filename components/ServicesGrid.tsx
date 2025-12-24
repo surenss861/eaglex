@@ -2,37 +2,27 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Home, Building2, Package, Boxes, Sparkles } from 'lucide-react'
+import { ArrowRight, Truck, Package, Sparkles } from 'lucide-react'
 
 export default function ServicesGrid() {
   const services = [
     {
-      icon: Home,
-      title: 'Moving',
-      description: 'Full-service residential and commercial moving with white glove care.',
-      href: '/services#moving',
-      highlight: false,
+      icon: Truck,
+      title: 'Trucking',
+      description: 'Professional freight transportation across Ontario & Quebec. Reliable delivery with commercial-grade equipment and trained operators.',
+      href: '/services#trucking',
     },
     {
       icon: Package,
-      title: 'Delivery',
-      description: 'Safe delivery of furniture and large appliances to your location.',
-      href: '/services#delivery',
-      highlight: false,
-    },
-    {
-      icon: Boxes,
-      title: 'Storage',
-      description: 'Secure storage solutions for your belongings during transitions.',
-      href: '/services#storage',
-      highlight: false,
+      title: 'Freight Logistics',
+      description: 'End-to-end logistics management. From pickup to delivery, we handle coordination, tracking, and execution.',
+      href: '/services#freight',
     },
     {
       icon: Sparkles,
-      title: 'White Glove / Red Carpet Setup',
-      description: 'Complete assembly, placement, and cleanup service. Our signature offering.',
+      title: 'White Glove & Red Carpet Execution',
+      description: 'Specialized handling, controlled delivery environments, and assembly/placement when required. Available for commercial and retail execution.',
       href: '/services#white-glove',
-      highlight: true,
     },
   ]
 
@@ -59,7 +49,7 @@ export default function ServicesGrid() {
   }
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -68,11 +58,11 @@ export default function ServicesGrid() {
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
-            Our <span className="text-gradient">Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            What We <span className="text-primary">Do</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive logistics solutions tailored to your needs
+            Logistics-first operations built for reliability and scale
           </p>
         </motion.div>
 
@@ -81,7 +71,7 @@ export default function ServicesGrid() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-3 gap-8"
         >
           {services.map((service, index) => {
             const Icon = service.icon
@@ -89,22 +79,8 @@ export default function ServicesGrid() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ 
-                  rotateY: 2,
-                  rotateX: -2,
-                  transition: { duration: 0.3 }
-                }}
-                className={`card-premium relative ${
-                  service.highlight 
-                    ? 'bg-gradient-to-br from-accent-pink/5 to-primary/5 border-2 border-accent-pink/20' 
-                    : ''
-                }`}
+                className="card-premium hover:shadow-xl transition-all duration-300"
               >
-                {service.highlight && (
-                  <div className="absolute top-4 right-4 bg-accent-pink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                    Featured
-                  </div>
-                )}
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-3 bg-primary/10 rounded-xl">
                     <Icon className="text-primary" size={32} />
@@ -112,7 +88,7 @@ export default function ServicesGrid() {
                   <ArrowRight className="text-gray-400 group-hover:text-primary transition-colors" size={20} />
                 </div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
                 <Link
                   href={service.href}
                   className="text-primary hover:text-primary-dark font-semibold inline-flex items-center group/link transition-colors"

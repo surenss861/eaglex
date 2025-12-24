@@ -6,22 +6,25 @@ import { Star, Quote } from 'lucide-react'
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah M.',
+      name: 'David Chen',
+      company: 'Retail Operations Manager',
       location: 'Toronto, ON',
       rating: 5,
-      text: 'EagleX handled our entire condo move with incredible care. The white glove service was exactly as promised - they assembled everything, placed it perfectly, and cleaned up. Worth every penny.',
+      text: 'EagleX handles our store deliveries with consistent reliability. Their logistics coordination and white glove execution for fixture installations has been excellent. Professional operation.',
     },
     {
-      name: 'Michael R.',
+      name: 'Marie Dubois',
+      company: 'Distribution Center',
       location: 'Montreal, QC',
       rating: 5,
-      text: 'Professional, punctual, and precise. They delivered and set up our new furniture collection without a scratch. The team was courteous and efficient. Highly recommend!',
+      text: 'We\'ve used EagleX for warehouse-to-warehouse freight across Quebec. On-time delivery, proper handling, and clear communication. They understand commercial logistics.',
     },
     {
-      name: 'Jennifer L.',
+      name: 'James Wilson',
+      company: 'Commercial Installations',
       location: 'Ottawa, ON',
       rating: 5,
-      text: 'Best moving experience we\'ve ever had. The red carpet treatment made all the difference. They treated our belongings like luxury items, which they are to us.',
+      text: 'Reliable trucking and controlled execution for our office furniture installations. The team understands commercial requirements and delivers consistently.',
     },
   ]
 
@@ -35,11 +38,11 @@ export default function Testimonials() {
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
-            What Our <span className="text-gradient">Clients Say</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            What Our <span className="text-primary">Clients Say</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Real experiences from satisfied customers across Ontario & Quebec
+            Trusted by businesses across Ontario & Quebec
           </p>
         </motion.div>
 
@@ -59,11 +62,12 @@ export default function Testimonials() {
                   <Star key={i} className="text-accent-pink fill-accent-pink" size={20} />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 relative z-10 italic leading-relaxed">
+              <p className="text-gray-700 mb-6 relative z-10 leading-relaxed">
                 "{testimonial.text}"
               </p>
               <div>
                 <p className="font-bold text-primary">{testimonial.name}</p>
+                <p className="text-sm text-gray-600 font-medium">{testimonial.company}</p>
                 <p className="text-sm text-gray-500">{testimonial.location}</p>
               </div>
             </motion.div>

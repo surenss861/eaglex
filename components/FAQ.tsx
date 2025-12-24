@@ -9,44 +9,44 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: 'What does White Glove / Red Carpet Setup include?',
+      question: 'What logistics services do you provide?',
       answer:
-        'Our premium service includes complete assembly, precise placement in your chosen room, removal of all packaging materials, floor and wall protection during installation, and a thorough cleanup. We handle everything from delivery to final placement.',
-    },
-    {
-      question: 'Are you fully insured and bonded?',
-      answer:
-        'Yes, EagleX Logistics is fully insured and bonded. We carry comprehensive liability insurance and workers\' compensation coverage. All items are protected during transport and installation. Proof of insurance is available upon request.',
+        'We provide trucking, freight logistics, and specialized white glove execution. Services include freight transportation, end-to-end logistics coordination, and controlled delivery with assembly/placement when required.',
     },
     {
       question: 'What areas do you serve?',
       answer:
-        'We provide service across all of Ontario and Quebec, including major cities like Toronto, Ottawa, Montreal, Quebec City, and surrounding areas. Contact us to confirm service availability in your specific location.',
+        'We provide logistics services across all of Ontario and Quebec, including major cities like Toronto, Ottawa, Montreal, Quebec City, and surrounding areas. Contact us to confirm service availability for your specific routes.',
     },
     {
-      question: 'How far in advance should I book?',
+      question: 'Are you fully insured and bonded?',
       answer:
-        'We recommend booking at least 1-2 weeks in advance for optimal scheduling. However, we offer same-day and next-day service options when available. Contact us for current availability.',
+        'Yes, EagleX Logistics is fully insured and bonded. We carry comprehensive liability insurance ($2M+ coverage) and workers\' compensation. All shipments are protected during transport. Proof of insurance is available upon request.',
     },
     {
-      question: 'Do you handle stairs and elevators?',
+      question: 'How do I request a quote?',
       answer:
-        'Yes, our trained crews are experienced with stairs, elevators, and tight spaces. We assess the delivery location beforehand and come prepared with the necessary equipment and techniques.',
+        'Use our online quote form or contact our sales team directly. We typically respond within 24 hours with detailed pricing based on your logistics requirements, route, and service level needed.',
     },
     {
-      question: 'What is your damage policy?',
+      question: 'What industries do you serve?',
       answer:
-        'We offer a damage-free guarantee. Our crews are trained in careful handling, and we use protective materials throughout the process. In the rare event of damage, we have comprehensive insurance coverage and will work with you to resolve any issues immediately.',
+        'We serve retail, distribution, construction, and commercial installation sectors. Our logistics solutions are designed for businesses that need reliable freight transportation and controlled execution.',
     },
     {
-      question: 'Can you assemble furniture on-site?',
+      question: 'Do you offer white glove / red carpet logistics?',
       answer:
-        'Yes, assembly is a core part of our White Glove service. Our crews are experienced with furniture assembly and will ensure everything is properly put together and placed exactly where you want it.',
+        'Yes, white glove and red carpet execution is available for shipments requiring specialized handling, controlled delivery environments, or assembly/placement. This capability is offered for commercial and retail execution needs.',
     },
     {
-      question: 'What are your business hours?',
+      question: 'What is your on-time delivery rate?',
       answer:
-        'Our standard hours are Monday-Friday 8am-6pm, Saturday 9am-4pm, and Sunday by appointment. We can accommodate evening and weekend appointments for your convenience.',
+        'We maintain a 99%+ on-time delivery rate across Ontario & Quebec. Our commercial-grade processes and professional crews ensure reliable execution and consistent performance.',
+    },
+    {
+      question: 'Can you handle large-scale logistics projects?',
+      answer:
+        'Yes, we handle logistics projects of various scales. Our fleet and operational capacity can accommodate single shipments to multi-stop distribution routes. Contact us to discuss your specific requirements.',
     },
   ]
 
@@ -60,11 +60,11 @@ export default function FAQ() {
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
-            Frequently Asked <span className="text-gradient">Questions</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Everything you need to know about our services
+            Operational information for logistics decision-makers
           </p>
         </motion.div>
 
@@ -112,4 +112,3 @@ export default function FAQ() {
     </section>
   )
 }
-

@@ -1,10 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import ContactStrip from '@/components/ContactStrip'
-import AudiencePathways from '@/components/AudiencePathways'
-import RedCarpetBrand from '@/components/RedCarpetBrand'
-import ProcessStrip from '@/components/ProcessStrip'
 import ServicesGrid from '@/components/ServicesGrid'
+import WhyEagleX from '@/components/WhyEagleX'
+import IndustriesServed from '@/components/IndustriesServed'
 import WhiteGloveDetails from '@/components/WhiteGloveDetails'
 import ServiceAreasStrip from '@/components/ServiceAreasStrip'
 import FleetShowcase from '@/components/FleetShowcase'
@@ -21,10 +20,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ContactStrip />
-      <AudiencePathways />
-      <RedCarpetBrand />
-      <ProcessStrip />
       <ServicesGrid />
+      <WhyEagleX />
+      <IndustriesServed />
       <WhiteGloveDetails />
       <ServiceAreasStrip />
       <FleetShowcase />
