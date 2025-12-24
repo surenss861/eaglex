@@ -3,7 +3,7 @@ import Hero from '@/components/Hero'
 import ServicesGrid from '@/components/ServicesGrid'
 import WhyEagleX from '@/components/WhyEagleX'
 import IndustriesServed from '@/components/IndustriesServed'
-import WhiteGloveStatus from '@/components/WhiteGloveStatus'
+import WhiteGloveExecution from '@/components/WhiteGloveExecution'
 import ServiceAreasStrip from '@/components/ServiceAreasStrip'
 import QuoteSection from '@/components/QuoteSection'
 import Footer from '@/components/Footer'
@@ -16,7 +16,7 @@ export default function Home() {
       <ServicesGrid />
       <WhyEagleX />
       <IndustriesServed />
-      <WhiteGloveStatus />
+      <WhiteGloveExecution />
       <ServiceAreasStrip />
       <QuoteSection />
       <Footer />

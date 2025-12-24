@@ -5,16 +5,19 @@ import { motion } from 'framer-motion'
 export default function WhyEagleX() {
   const reasons = [
     {
+      number: '01',
       title: 'Reliability',
-      description: 'On-time delivery with commercial-grade processes.',
+      description: 'On-time delivery with commercial-grade processes. Scheduled. Dispatched. Executed.',
     },
     {
+      number: '02',
       title: 'Coverage',
-      description: 'Ontario & Quebec with consistent availability.',
+      description: 'Ontario & Quebec with consistent availability. Province-wide execution.',
     },
     {
+      number: '03',
       title: 'Execution',
-      description: 'Professional crews and systematic operations.',
+      description: 'Professional crews. Systematic operations. Confirmed delivery protocols.',
     },
   ]
 
@@ -43,10 +46,13 @@ export default function WhyEagleX() {
               transition={{ duration: 1, delay: index * 0.15, ease: [0.23, 1, 0.32, 1] }}
               className="section-divider pt-8"
             >
+              <div className="text-4xl font-bold text-white/20 mb-4">
+                {reason.number}
+              </div>
               <h3 className="text-3xl font-bold mb-4 text-white tracking-tight">
                 {reason.title}
               </h3>
-              <p className="text-lg text-white/60 font-light">
+              <p className="text-lg text-white/60 font-light leading-relaxed">
                 {reason.description}
               </p>
             </motion.div>
